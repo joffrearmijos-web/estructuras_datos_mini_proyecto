@@ -1,0 +1,5 @@
+public static void registrar(Estado.Tipo tipo, Flujo.Metodo metodo, long nanosegundos) {
+    if(tipo == null || metodo == null || nanosegundos < 0 ) return;
+    Map<Flujo.Metodo, Long> tiempos = TIEMPOS.get(tipo);
+    tiempos.putIfAbsent(metodo, nanosegundos);
+}
